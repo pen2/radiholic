@@ -1,0 +1,51 @@
+
+<script language="JavaScript">
+<!--
+function setInputValue(id, text){
+	document.getElementById(id).value = text;
+}
+// -->
+</script>
+
+<div id="main">
+
+  <!-- $BeginBlock QueryError -->
+  <div class="error">
+    <p><strong>正しい検索文字列を入力してください。</strong></p>
+    <p>検索文字列が何もないか、正しくありません。 </p>
+    <ul>
+      <li>前のページに戻って検索し直してください。</li>
+    </ul>
+  </div>
+  <!-- $EndBlock QueryError -->
+
+  <!-- $BeginBlock Success -->
+  
+  ${radiholic_supersky}
+  
+    <h2>"${Query}"のネットラジオ</h2>
+    <p>${QueryNum}件ありました。</p>
+    
+    <!-- $BeginBlock QuerySearch -->
+<table width="710" border="0">
+  <tr>
+    <td width="64" rowspan="2">
+    <!-- <img border="0" src="http://img.simpleapi.net/small/${inlink}" width="64" height="64" /> -->
+    <img border="0" src="http://capture.heartrails.com/64x64/shadow/border?${inlink}" width="64" height="64" />
+    </td>
+    <td><a href="${inlink}" target="_blank">${title}</a> - ${session}</td>
+    </tr>
+  <tr>
+    <td><a href="${Url}" class="url_style">${url}</a> <span class="url_branch">${branch}</span>
+      <p align="right" class="date_style">${count}再生 - ${Fin_date}</p></td>
+  </tr>
+</table>
+    ${radiholic_skyline}
+    <!-- $EndBlock QuerySearch -->
+  
+  <!-- $EndBlock Success -->
+  
+  
+  <p>[ <a href="../">トップに戻る</a> ]</p>
+  <p>&nbsp;</p>
+</div>

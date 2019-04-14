@@ -1,0 +1,69 @@
+
+<script language="JavaScript">
+<!--
+function setInputValue(id, text){
+	document.getElementById(id).value = text;
+}
+// -->
+</script>
+
+<div id="main">
+
+  <!-- $BeginBlock QueryError -->
+  <div class="error">
+    <p><strong>Error</strong></p>
+    <p>認証用コードが正しくありません。 </p>
+  </div>
+  <!-- $EndBlock QueryError -->
+  <!-- $BeginBlock ManageSuccess -->
+  <div class="info">
+    <p><strong>処理実行</strong></p>
+    <p>処理を実行しました。 </p>
+  </div>
+  <!-- $EndBlock ManageSuccess -->
+
+  <!-- $BeginBlock Success -->
+  
+    <h2>"${Query}"のネットラジオ</h2>
+    <p>${QueryNum}件ありました。</p>
+    
+    <!-- $BeginBlock QuerySearch -->
+<table width="710" border="0">
+  <tr>
+    <!-- $BeginBlock QueryDoDelete -->
+    <td width="64" rowspan="2" bgcolor="red" >
+        <form action="manage_radiotomo.php?key=${key}" method="post">
+        <input type="hidden" name="key" value="${key}" />
+        <input type="hidden" name="mode" value="delete" />
+        <input type="hidden" name="filename" value="${filename}" />
+        <input type="submit" value="削除する" />
+    </form>
+    </td>
+    <!-- $EndBlock QueryDoDelete -->
+    <!-- $BeginBlock QueryDoRestore -->
+    <td width="64" rowspan="2" bgcolor="green" >
+        <form action="manage_radiotomo.php?key={$key}" method="post">
+        <input type="hidden" name="key" value="${key}" />
+        <input type="hidden" name="mode" value="restore" />
+        <input type="hidden" name="filename" value="${filename}" />
+        <input type="submit" value="元に戻す" />
+    </form>
+    </td>
+    <!-- $EndBlock QueryDoRestore -->
+    <td><strong>${title}</strong> - ${session} 
+        <a href="http://radiholic.com/iphone/files/${filename}" target="_blank">[再生]</a> 
+    </td>
+    </tr>
+  <tr>
+    <td><a href="${Url}" class="url_style">${url}</a> <span class="url_branch">${branch}</span>
+      <p align="right" class="date_style">${count}再生 - ${Fin_date}</p></td>
+  </tr>
+</table>
+    <!-- $EndBlock QuerySearch -->
+  
+  <!-- $EndBlock Success -->
+  
+  
+  <p>[ <a href="../">トップに戻る</a> ]</p>
+  <p>&nbsp;</p>
+</div>

@@ -1,0 +1,126 @@
+
+<script language="JavaScript">
+<!--
+  //XMLHttpRequestオブジェクト生成
+  function createHttpRequest(){
+
+    //Win ie用
+    if(window.ActiveXObject){
+        try {
+            //MSXML2以降用
+            return new ActiveXObject("Msxml2.XMLHTTP") 
+        } catch (e) {
+            try {
+                //旧MSXML用
+                return new ActiveXObject("Microsoft.XMLHTTP") 
+            } catch (e2) {
+                return null
+            }
+         }
+    } else if(window.XMLHttpRequest){
+        //Win ie以外のXMLHttpRequestオブジェクト実装ブラウザ用
+        return new XMLHttpRequest() 
+    } else {
+        return null
+    }
+  }
+
+  function requestFile( fileName )
+  {
+    //XMLHttpRequestオブジェクト生成
+    var httpoj = createHttpRequest() 
+	var countUp = "./count.php?id=" + fileName
+    
+    //open メソッド
+    httpoj.open( 'GET' , countUp , false ) 
+    
+    //send メソッド
+    httpoj.send( '' )
+	
+	//cache load
+	document.location = "files/${filename}"
+  }
+  
+  function reportFile( fileName, postData )
+  {
+    //XMLHttpRequestオブジェクト生成
+    var httpoj = createHttpRequest() 
+	var reportRpc = "./report.php?id=" + fileName
+	
+	// 送信データ生成
+	var value = '';
+	for(var i = 0; i < postData.elements.length; i++) {
+		value += ('&' + postData.elements[i].name + '=' + postData.elements[i].value);
+	}
+    
+    //open メソッド
+    httpoj.open( 'POST' , reportRpc , false )
+	httpoj.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+	
+    //受信時に起動するイベント
+    httpoj.onreadystatechange = function() 
+    { 
+      //readyState値は4で受信完了
+      if (httpoj.readyState==4)  //[5]
+      { 
+        //コールバック
+        on_loaded(httpoj)
+      }
+    }
+	
+    //send メソッド
+    httpoj.send( value.substring(1) )
+  }
+  
+  function on_loaded(oj)
+  {
+        //レスポンスを取得
+        res  = oj.responseText
+        //ダイアログで表示
+        alert(res)
+  }
+  
+//-->
+</script>
+
+<body>
+
+<div id="header">
+  <h1>ラジオ再生</h1>
+  <a href="#" onClick="history.back(); return false;" id="backButton">戻る</a>
+  <a href="http://radiholic.com/" id="toolButton">Topへ</a>
+</div>
+
+<!-- $BeginBlock FilenameSearch -->
+<h1>${session}</h1>
+<a href="search.php?q=${titleUrl}">${title}</a>
+<p><a href="#" onclick = "requestFile('${filename}')" class="green button" >このラジオを聞く</a></p>
+
+<ul class="field">
+	<li><h3>登録日</h3>${fin_date}</li>
+	<li><h3>イメージ</h3>
+    <img src="http://capture.heartrails.com/small?${inlink}" width="120" height="90" border="0"/></li>
+    <li><h3>Webサイト</h3><a href="${inlink}" target="_blank" class="blue button" >新しいタブで開く...</a></li>
+	<li><h3>再生数</h3>${count}回</li>
+</ul>
+
+<h1>報告フォーム</h1>
+<p>このラジオに問題がある場合は、下記フォームにてご連絡ください。</p>
+<form name="reportform" method="post" action="">
+<ul class="field">
+	<li><h3>メアド</h3><input name="mailaddr" type="text" ></li>
+    <li><h3>報告内容</h3><textarea name="report" cols="8" rows="2"></textarea></li>
+    <li><h3>送信</h3>
+      <a href="#" onclick = "reportFile('${filename}', reportform)" class="red button" >報告する</a></li>
+	</li>
+</ul>
+</form>
+
+
+
+
+
+<!-- $EndBlock FilenameSearch -->
+
+
+

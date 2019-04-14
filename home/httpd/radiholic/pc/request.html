@@ -1,0 +1,140 @@
+
+<script language="JavaScript">
+<!--
+function setInputValue(id, text){
+	document.getElementById(id).value = text;
+}
+function getCheck(obj)
+{
+　　if (obj.checked)
+　　{
+　　　　alert('このチェックをオンにする場合、ラジオのトラック（話数やサブタイトル名）は、放送回が判断できるように特に分かりやすく入力しましょう。');
+　　}
+}
+// -->
+</script>
+<style type="text/css">
+<!--
+.style1 {
+	color: #669900;
+	font-weight: bold;
+}
+.style2 {
+	color: #666666;
+	font-weight: bold;
+}
+-->
+</style>
+
+
+<div id="main">
+
+  <!-- $BeginBlock Maintenance -->
+  <div class="error">
+    <p><strong>ただいまメンテナンス中です。</strong></p>
+    <p>ネットラジオの登録はただいま行えません。申し訳ございません。 </p>
+    <ul>
+        <li>お手数ですが、日を改めてお試しください。</li>
+    </ul>
+  </div>
+  <!-- $EndBlock Maintenance -->
+
+  <!-- $BeginBlock URLError -->
+  <div class="error">
+    <p><strong>正しいURLを入力してください。</strong></p>
+    <p>ネットラジオのリソースURL を入力してください。 </p>
+    <ul>
+      <li>試聴ページの「ラジオを聞く」などのリンク先のURLを そのまま貼り付けてください。</li>
+      <li>URLの終わりが .asx .wax .wvx .asf .wma 形式のネットラジオに対応しています。</li>
+      <li>URLの先頭や終わりに余計なスペースが入っていませんか？</li>
+    </ul>
+  </div>
+  <!-- $EndBlock URLError -->
+
+  <!-- $BeginBlock Success -->
+<form method="POST" action="./post.php">
+  <h2>リクエスト登録</h2>
+  <p>リクエストする ネットラジオのリソースURL は以下でよろしいですか？<br />
+  念のため以下のリンクをクリックして、リンク先が存在するか確認してみてください。<br />
+  （新しいウインドウで開きます）</p>
+  <div class="info">
+    <a href="${url}" target="_blank">
+    <img src="http://capture.heartrails.com/64x64/border/bg=ccffcc?${inlink}" border="0" align="absmiddle" width="64" height="64" /></a>
+    <a href="${url}" target="_blank">${url}</a></div>
+
+  <p>変更する場合はブラウザの[戻る]で戻ってください。</p>
+  <h3>タイトル</h3>
+  <blockquote>
+    <p>ラジオのタイトル（番組名）を入力してください。<br />
+      後で変更できませんので注意して入力してください。ピンク色の項目から選ぶこともできます。<br />
+      <span class="style2">[例] らじほりっくウェブラジオ！</span></p>
+    <p>
+      <input type="text" id="title" name="title" size="75" value="${title}" />
+    </p>
+  </blockquote>
+  <!-- $BeginBlock titleguessitem -->
+  <blockquote>
+    <p><span class="tag" onclick="setInputValue('title', '${titleguess}')">${titleguess}</span></p>
+  </blockquote>
+  <!-- $EndBlock titleguessitem -->
+
+  <h3>トラック</h3>
+  <blockquote>
+    <p>ラジオのトラック（話数やサブタイトル名）を入力してください。<br />
+      後で変更できませんので注意して入力してください。ピンク色の項目から選ぶこともできます。<br />
+      <span class="style2">［例］ 第4回 「こんな会社辞めてやる～！」</span></p>
+    <p>
+      <input type="text" id="session" name="session" size="75" value="${session}" />
+    </p>
+  </blockquote>
+  <!-- $BeginBlock sessionguessitem -->
+  <blockquote>
+    <p><span class="tag" onclick="setInputValue('session', '${sessionguess}')">${sessionguess}</span></p>
+  </blockquote>
+  <!-- $EndBlock sessionguessitem -->
+  
+  <h3>カテゴリ</h3>
+  <blockquote>
+    <p>最も近いと思われるカテゴリを選択してください。</p>
+    <p>
+      <select name="category">
+        <!-- $BeginBlock categories -->
+        <option value="${categoryid}">${categoryname}</option>
+        <!-- $EndBlock categories -->
+      </select>
+    </p>
+  </blockquote>
+
+  <h3>お願い</h3>
+  <blockquote>
+      <font color='red'><strong>古いラジオの登録について</strong></font><br />
+      <p>radiholicは独自の基準により、過去のラジオを中心にキャッシュからの自動削除を行なっています。ラジオ番組によっては古いラジオが公開されたままのWebラジオが存在する場合がありますが、仕様上、このような古いラジオでradoholicに登録されてもすぐに削除される場合が多くなります。ラジオの登録者様には「公開から日が経過していない新しいラジオ」の登録を中心に行なっていただけますと幸いです。</p>
+  </blockquote>
+
+  <h3>オプション</h3>
+  <blockquote>
+      <label>
+      <input type="checkbox" name="branch" id="branch" onClick="getCheck(this);"/>
+      <strong>リソースURLの重複を許して登録</strong>（通常はチェックしないでください）</label>
+      <p>「同じURLで定期的に内容が更新されるネットラジオ」の場合は、次のページでエラーとなってしまいます。その場合のみ、上記チェックをつけて再リクエストしてみてください。</p>
+  </blockquote>
+  
+  <input type=hidden name="url" value="${url}">
+  <blockquote>
+  <div class="info">
+     <div align="center">
+       <input type="submit" value="  リクエスト!  ">
+        </div>
+  </div>
+  </blockquote>
+</form>
+  
+  <a href="http://developer.yahoo.com/">
+  <img src="http://l.yimg.com/us.yimg.com/i/us/nt/bdg/websrv_88_1.gif" alt="powered by Yahoo! Site Explorer Inbound Links API" hspace="10" border="0" align="right"></a>  
+
+  <!-- $EndBlock Success -->
+  
+  
+  <p>[ <a href="../">トップに戻る</a> ]</p>
+  <p>&nbsp;</p>
+</div>

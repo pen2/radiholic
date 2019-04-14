@@ -1,0 +1,69 @@
+/* Deadlock admin stylesheet */
+
+body {
+	background-color: #E0E0E0;
+	font-family: Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial;
+}
+.style2 {
+	font-size: 12px;
+	font-family: Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial;
+}
+.style3 {font-size: 10px; font-family: Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial}
+.bottomnavcell {
+font-size: 11px; 
+font-family: Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial;
+padding:2px;
+}
+.style5 {font-size: 12px; font-family: Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial; font-weight: bold; }
+.style7 {font-family: Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial}
+.style8 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style9 {
+	font-family: Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial;
+	color: #FF0000;
+	font-size: 12px;
+}
+.style11 {
+font-family:Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial;
+font-style:italic;
+font-size:12px;
+}
+.style12 {
+	font-family: Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial;
+	color:#008000;
+	font-size: 12px;
+}
+.footercell {
+border-top:1px dashed #000000;
+border-bottom:1px solid #000000;
+font-size: 10px; 
+font-family: Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial;
+padding:2px;
+}
+#hintbox{ /*CSS for pop up hint box */
+border-style:outset; border-width:3px; position:absolute;
+top: 0;
+background-color: #FFFF99;
+width: 150px; /*Default width of hint.*/ 
+padding: 0;
+line-height:18px;
+z-index:100;
+visibility: hidden; font-style:normal; font-variant:normal; font-weight:normal; font-size:11px; font-family:Verdana
+}
+
+.hintanchor{ /*CSS for link that shows hint onmouseover*/
+font-weight: bold;
+color: #000080;
+margin: 3px 8px;
+font-family:Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial;
+font-size:12px; background-color:#99CCFF
+}
+.hintanchor2{ /*CSS for link that shows hint onmouseover*/
+color: #000080;
+margin: 3px 8px;
+font-family:Meiryo, "ƒƒCƒŠƒI", "‚l‚r ‚oƒSƒVƒbƒN", Osaka, Verdana, Arial;
+font-size:12px; background-color:#99CCFF
+}
+table        { text-align:left; }

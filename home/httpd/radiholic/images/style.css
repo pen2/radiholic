@@ -1,0 +1,208 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-image: url(back.gif);
+	font-family: "メイリオ", "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+	background-attachment: fixed;
+	background-color: #333333;
+	background-repeat: repeat;
+	padding: 0px;
+	margin: 0px;
+	color: #333333;
+}
+.new {
+	color: #333333;
+	font-size: 10pt;
+	background-color: #FFFF99;
+	border: 1px solid #CCCCCC;
+	margin-left: 4px;
+}
+.stats {
+	background-color: #DFFFE4;
+	border: 1px solid #AAAAAA;
+	padding: 4px;
+	margin: 4px;
+}
+.search {
+	background-color: #FFF0CC;
+	border: 1px solid #AAAAAA;
+	margin: 4px;
+}
+.info {
+	background-color: #CCFFCC;
+	border: 1px solid #666666;
+	padding: 4px;
+	margin: 4px;
+}
+.error {
+	background-color: #FFCCCC;
+	border: 1px solid #666666;
+	padding: 4px;
+	margin: 4px;
+}
+
+.tag {
+	background-color: #FFCCCC;
+	border: 1px solid #666666;
+	cursor : pointer;
+	padding: 2px;
+	margin: 2px;
+	font-size: 10pt;
+}
+.resuest_box {
+	background-image: url(request_bg.gif);
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	height: 60px;
+	width: 730px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+h1 {
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+h2 {
+	font-size: 20px;
+	color: #333333;
+	background-image: url(h2.gif);
+	background-repeat: no-repeat;
+	height: 42px;
+	text-indent: 30px;
+	vertical-align: middle;
+	padding-top: 5px;
+}
+h3 {
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+	text-indent: 4px;
+	height: 22px;
+	border-bottom-width: 2px;
+	border-bottom-style: dotted;
+	border-bottom-color: #999999;
+}
+
+
+#header {
+	margin: auto;
+	width: 750px;
+	background-color: #CC66CC;
+	height: 150px;
+	background-image: url(title2.jpg);
+	background-repeat: no-repeat;
+}
+#header_text {
+	padding-left: 150px;
+	padding-top: 10px;
+	padding-right: 10px;
+	font-size: 14px;
+	color: #FFCCFF;
+	text-decoration: none;
+}
+#header_link a{
+	font-size: 14px;
+	color: #FFFF66;
+}
+#header_link a:hover{
+	font-size: 14px;
+	color: #333333;
+	text-decoration: none;
+	background-color: #FFFF66;
+}
+
+#content {
+	width: 750px;
+	background-color: #FFFFFF;
+	margin: auto;
+}
+
+
+#main {
+	width: 730px;
+	background-color: #FFFFFF;
+	top: 0px;
+	padding: 10px;
+}
+
+#country {
+	width: 730px;
+	padding-top: 10px;
+}
+#state {
+	width: 500px;
+	clear: none;
+	top: 0px;
+}
+#town {
+	width: 200px;
+	float: right;
+	top: 0px;
+}
+
+
+#footer {
+	margin: auto;
+	width: 750px;
+	color: #FFFFFF;
+	background-color: #999999;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 10pt;
+	letter-spacing: 0.2em;
+	text-align: right;
+	height: 60px;
+	background-repeat: no-repeat;
+	padding-top: 30px;
+}
+
+.url_style {
+	color: #006600;
+	font-size: 10pt;
+}
+.url_branch {
+	color: #999999;
+	font-size: 8pt;
+}
+.date_style {
+	font-size: 9pt;
+	color: #666666;
+}
+
+a:hover{
+	color: #CC3300;
+	background-color: #FFFFCC;
+}
+
+#navigator a{
+	display:block;
+	width:90px;
+	height:20px;
+	overflow:hidden;
+	background:url(help.gif) no-repeat 0 0;
+	vertical-align: middle;
+	text-decoration: none;
+	color: #663366;
+	font-size: 12px;
+	font-weight: bold;	/*
+	margin-left: 20px;
+	margin-top: 10px;
+	padding-top: 10px;
+	*/
+	text-align: center;
+	float: right;
+	position: relative;
+	right: 10px;
+	bottom: 10px;
+	clear: none;
+	padding-top: 4px;
+}
+#navigator a:hover{
+	background-position:-90px 0;
+	color: #FFFFFF;
+}
+

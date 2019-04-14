@@ -1,0 +1,95 @@
+
+<body>
+
+
+
+<div id="top_header">
+  <img src="../images/top_logo_icon.png" width="57" height="57">
+    <h1>radiholic</h1>
+</div>
+
+
+<p align="center"><a href="http://spreadsheets.google.com/viewform?key=pRvN5-j_flW43-6PHgafETA" target="_blank">アンケート</a>
+ | 
+<a href="http://twitter.com/radiholic" target="_blank">最新情報はコチラ</a>
+</p>
+
+<!--
+<p align="center" class="new">2012年3月24日(土)-25日(日)に掛けて、数時間、メンテナンスのためシステムを停止します。ご不便をおかけしますが、どうぞ宜しくお願いします。 
+
+<p align="center"><img src="../images/new.gif" > <a href="search.php?q=茅原実里のradio+minorhythm">「茅原実里」さん応援中♪</a></p>
+-->
+
+<p align="center" class="new"><strong>radiholic サービス終了のお知らせ</strong> 2019年3月末を持ちまして radiholic をサービス終了とさせて頂きます。約10年間の永きにに渡りご愛顧頂きまして本当にありがとうございました。</p> 
+
+
+	<script type="text/javascript">
+	<!--
+
+	function clickclear(thisfield, defaulttext) {
+		if (thisfield.value == defaulttext) {
+		thisfield.value = "";
+		}
+	}
+	function clickrecall(thisfield, defaulttext) {
+		if (thisfield.value == "") {
+		thisfield.value = defaulttext;
+		}
+	}
+	
+	function Submit(formName){
+	  document.forms[formName].submit();
+	}
+	
+	// -->
+	</script>
+    
+<div>
+
+<form name="search" method="GET" action="./search.php">
+
+<a href="javascript:Submit('search')" class="blue button search-button" >検索!</a>
+<input type="text" name="q" value="(例)らじほりっく" id="some_name" onClick="clickclear(this, '(例)らじほりっく')" onBlur="clickrecall(this,'(例)らじほりっく')" class="search-input" />
+
+</form>
+
+</div>
+
+
+
+
+<ul class="data">
+    <li><p>radiholicで、iPhone, iPod touch で WindowsMedia 形式のストリーミングラジオを いつでも・どこでも聞いちゃおう！<br />リクエストはPCからアクセスしてね！<br /><a href="http://twitter.com/radiholic" target="_blank"><strong>公式Twitter開設！</strong></a></p> </li>
+</ul>
+
+<h1>メニュー</h1>
+
+<ul>
+<li class="arrow"><a href="new.php">新着のラジオ</a></li>
+<li class="arrow"><a href="all.php">全てのラジオ</a></li>
+</ul>
+
+<h1>人気のリクエスト(全期間)</h1>
+
+<ul>
+<!-- $BeginBlock TitleCloud -->
+<li class="arrow"><small class="counter">${TitleScore}</small><a href="search.php?q=${TitleUrl}">${TitleName}</a></li>
+<!-- $EndBlock TitleCloud -->
+</ul>
+
+<h1>人気のラジオ(全期間)</h1>
+
+<ul>
+<!-- $BeginBlock TopPlays -->
+<li class="arrow"><small>${count}再生</small><a href="play.php?id=${filename}">${session}</a> <a href="play.php?id=${filename}">${title}</a></li>
+<!-- $EndBlock TopPlays -->
+</ul>
+
+
+
+<div align="center">総再生数 ${TotalCount}回 / 総ラジオ数 ${TotalRadio}
+  
+</div>
+<ul class="data">
+	<li><p>${footer}</p> </li>
+</ul>

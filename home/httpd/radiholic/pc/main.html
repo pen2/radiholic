@@ -1,0 +1,126 @@
+<div id="main">
+<script type="text/javascript">
+<!--
+function cText(obj){
+if(obj.value==obj.defaultValue){
+obj.value="";
+obj.style.color="#000";
+}
+}
+
+function sText(obj){
+if(obj.value==""){
+obj.value=obj.defaultValue;
+obj.style.color="#999";
+}
+}
+//-->
+</script>
+
+<!-- ${radiholic_supersky}
+-->
+
+<!--
+<p align="center" class="new">2012年3月24日(土)-25日(日)に掛けて、数時間、メンテナンスのためシステムを停止します。ご不便をおかけしますが、どうぞ宜しくお願いします。 <a href="http://twitter.com/radiholic" target="_blank">最新情報はコチラ</a><br />
+-->
+
+<h2>ラジオをリクエストする</h2>
+<div align="center">
+リクエストするには、以下のボックスに ネットラジオのリソースURLを貼り付けてください。<br />
+asx, wax, wvx, asf, wma 形式のネットラジオに対応しています。
+</div>
+<div class="resuest_box"><form method="GET" action="./request.php">
+  <p>リソースURL: 
+	<input type="text" name="url" size="60" value="(例) http://www.radiholic.com/radio01.asx" onFocus="cText(this)" onBlur="sText(this)" style="color:#999" />
+    <input type="submit" value="リクエスト!">
+  </p>
+</form>
+
+</div>
+
+<div id="country">
+
+<div id="town">
+
+<div align="center"><a href="http://twitter.com/radiholic" target="_blank"><img src="../images/radiholic_twitter.png" width="169" height="87" border="0" /></a></div>
+
+<div align="center" class="stats">総再生数 ${TotalCount}回<br />総ラジオ数 ${TotalRadio}</div>
+
+<!--ネットラジオのリソースURLやタイトル、トラックで検索できます。-->
+<div align="center" class="search"><form method="GET" action="./search.php">
+  <p>
+  <input type="text" name="q" size="20" value="(例) らじほりっく" onFocus="cText(this)" onBlur="sText(this)" style="color:#999" />
+  <input type="submit" value="検索">
+  </p>
+</form>
+</div>
+
+<h2>ラジオを聞くには？</h2>
+<p>お手持ちのiPhone か iPod touch で、以下のURLを開いてください。［無料です］</p>
+<!--<p align="center"><img src="../images/iphone_logo.gif" width="60" height="60" alt="http://radiholic.com/" /></p><br />-->
+<p align="center"><strong>http://radiholic.com/ </strong></p>
+<p align="right"><a href="help.php">&gt;&gt;使い方はコチラ</a></p>
+<p align="right"><a href="http://d.hatena.ne.jp/radiholic/" target="_blank">&gt;&gt;開発日誌はコチラ</a></p>
+
+<p>&nbsp;</p>
+
+<h2>人気のリクエスト</h2>
+<p>より多く登録されているタイトルが大きな文字で表示されます。</p>
+<!-- $BeginBlock TitleCloud -->
+<span><a href="search.php?q=${TitleUrl}"><font point-size="${TitleFontSize}">${TitleName}</font></a></span>
+<!-- $EndBlock TitleCloud -->
+<p align="right"><a href="all.php">&gt;&gt;全てのラジオ</a></p>
+
+
+</div>
+<!-- id="town" -->
+
+<div id="state">
+
+<h2>最近のリクエスト</h2>
+<p>10件表示されます。</p>
+<!-- $BeginBlock RecentRequests -->
+<table width="490" border="0">
+  
+  <tr>
+    <td width="64" rowspan="2">
+    <img border="0" src="http://capture.heartrails.com/64x64/shadow/border?${inlink}" width="64" height="64" />
+    </td>
+    <td><a href="${inlink}" target="_blank">${title}</a> - ${session}</td>
+    </tr>
+  <tr>
+    <td><a href="${Url}" class="url_style">${shorturl}</a> <span class="url_branch">${branch}</span>
+      <p align="right" class="date_style">${state} - ${Req_date}</p></td>
+  </tr>
+</table>
+<!-- $EndBlock RecentRequests -->
+
+<p>&nbsp;</p>
+<h2>新着のラジオ</h2>
+<p>10件表示されます。</p>
+
+<!-- $BeginBlock RecentConverts -->
+<table width="490" border="0">
+  
+  <tr>
+    <td width="64" rowspan="2">
+    <!-- <img border="0" src="http://img.simpleapi.net/small/${inlink}" width="64" height="64" /> -->
+    <img border="0" src="http://capture.heartrails.com/64x64/shadow/border?${inlink}" width="64" height="64" />
+    </td>
+    <td><a href="${inlink}" target="_blank">${title}</a> - ${session}</td>
+    </tr>
+  <tr>
+    <td><a href="${Url}" class="url_style">${shorturl}</a> <span class="url_branch">${branch}</span>
+      <p align="right" class="date_style">キャッシュ済み - ${count}再生 - ${Fin_date}</p></td>
+  </tr>
+</table>
+<!-- $EndBlock RecentConverts -->
+
+</div><!-- id="state" -->
+
+
+</div><!-- id="country" -->
+
+${radiholic_supersky}
+
+</div>
